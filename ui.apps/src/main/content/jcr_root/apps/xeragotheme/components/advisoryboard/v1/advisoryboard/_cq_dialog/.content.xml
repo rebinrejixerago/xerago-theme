@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+	xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    jcr:title="About Us Properties">
+	<content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Title"
+                        name="./title"/>
+                    <subTitle
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Sub Title"
+                        name="./subTitle"/>
+                    <advisoryMembers
+                		jcr:primaryType="nt:unstructured"
+                		fieldLabel="Members of the advisory board"
+                		sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                		composite="{Boolean}true">              
+                		<field
+         					jcr:primaryType="nt:unstructured"
+                    		sling:resourceType="granite/ui/components/coral/foundation/container"
+                    		name="./advisoryMembers">
+                			<items jcr:primaryType="nt:unstructured">
+                				<memberImage
+                        			jcr:primaryType="nt:unstructured"
+                        			sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                        			enableNextGenDynamicMedia="{Boolean}true"
+                        			fieldLabel="Member Photo"
+                        			fileNameParameter="./memberfileName"
+                        			fileReferenceParameter="./memberReference"
+                        			mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                   					name="./memberImage"/>
+                    			<memberName
+                        			jcr:primaryType="nt:unstructured"
+                       				sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    				fieldLabel="Member Name"
+                       				name="./memberName" />
+                    			<memberDesig
+                        			jcr:primaryType="nt:unstructured"
+                        			sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        			fieldLabel="Member Designation"
+                        			name="./memberDesig" />
+                        		<socialMediaProfiles
+                					jcr:primaryType="nt:unstructured"
+                					fieldLabel="Social Media Profiles"
+                					sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                					composite="{Boolean}true">              
+                					<field
+         								jcr:primaryType="nt:unstructured"
+                    					sling:resourceType="granite/ui/components/coral/foundation/container"
+                    					name="./socialMediaProfiles">
+                						<items jcr:primaryType="nt:unstructured">
+                							<socialMediaIcon
+                        						jcr:primaryType="nt:unstructured"
+                        						sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                        						enableNextGenDynamicMedia="{Boolean}true"
+                        						fieldLabel="Social Media Icon"
+                        						fileNameParameter="./socialfileName"
+                        						fileReferenceParameter="./socialReference"
+                        						mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                   								name="./socialMediaIcon"/>
+                    						<socialMediaUrl
+                        						jcr:primaryType="nt:unstructured"
+                       							sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    							fieldLabel="Social Media Url"
+                       							name="./socialMediaUrl" />
+                						</items>
+                					</field>
+            					</socialMediaProfiles>
+                			</items>
+                		</field>
+            		</advisoryMembers>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

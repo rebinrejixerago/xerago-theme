@@ -1,0 +1,9 @@
+#base=css
+
+bootstrap.min.css
+magnific-popup.min
+meanmenu.min.css
+remixicon.css
+aos.css
+owl.carousel.min.css
+owl.theme.default.min.css

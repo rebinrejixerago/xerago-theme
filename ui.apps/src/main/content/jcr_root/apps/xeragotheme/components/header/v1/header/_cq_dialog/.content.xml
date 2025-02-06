@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="cq/gui/components/authoring/dialog"
+          jcr:title="Header Properties">
+	<content jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                <items jcr:primaryType="nt:unstructured">
+                    <tab1 jcr:primaryType="nt:unstructured"
+                          sling:resourceType="granite/ui/components/coral/foundation/container"
+                          jcr:title="Top Header Properties">
+                        <items jcr:primaryType="nt:unstructured">
+                            <phoneNumber
+                        		jcr:primaryType="nt:unstructured"
+                   				sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                				fieldLabel="Phone Number"
+                        		fieldDescription="Enter phone number"
+                        		name="./phoneNumber"/>
+                    		<email
+                        		jcr:primaryType="nt:unstructured"
+                        		sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        		fieldLabel="Email"
+                      			fieldDescription="Enter email"
+                        		name="./email"/>
+                        	<topRightNav jcr:primaryType="nt:unstructured"
+                          		sling:resourceType="granite/ui/components/coral/foundation/well"
+                          		jcr:title="Top Header Right Navigation">
+                          		<items jcr:primaryType="nt:unstructured">
+                        			<topNavMulti
+                						jcr:primaryType="nt:unstructured"
+                						fieldLabel="Top Navigation Multifield"
+                						sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                						composite="{Boolean}true">              
+                						<field
+                    						jcr:primaryType="nt:unstructured"
+                    						sling:resourceType="granite/ui/components/coral/foundation/container"
+                    						name="./topNavMulti">
+                							<items jcr:primaryType="nt:unstructured">
+                    							<topNavTitle
+                        							jcr:primaryType="nt:unstructured"
+                        							sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        							fieldLabel="Navigation title"
+                        							name="./topNavTitle" />
+                    							<topNavUrl
+                        							jcr:primaryType="nt:unstructured"
+                        							sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        							fieldLabel="Navigation URL"
+                        							name="./topNavUrl" />
+                							</items>
+                						</field>
+            						</topNavMulti>
+                          			<langMulti
+                						jcr:primaryType="nt:unstructured"
+                						fieldLabel="Language Options"
+                						sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                						composite="{Boolean}true">              
+                						<field
+                    						jcr:primaryType="nt:unstructured"
+                    						sling:resourceType="granite/ui/components/coral/foundation/container"
+                    						name="./langMulti">
+                							<items jcr:primaryType="nt:unstructured">
+                        						<language
+                        							jcr:primaryType="nt:unstructured"
+                        							sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        							fieldLabel="Laguage"
+                        							name="./language" />
+                        						<langIcon
+                        							jcr:primaryType="nt:unstructured"
+                        							sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                	enableNextGenDynamicMedia="{Boolean}true"
+                                                	fieldLabel="Language Icon"
+                                                	fileNameParameter="./fileName"
+                                                	fileReferenceParameter="./langIconReference"
+                                                	mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                        							name="./langIcon"/>
+                          					</items>
+                						</field>
+                          			</langMulti>
+                          		</items>
+                        	</topRightNav>	
+                        </items>
+                    </tab1>
+                    <tab2 jcr:primaryType="nt:unstructured"
+                          sling:resourceType="granite/ui/components/coral/foundation/container"
+                          jcr:title="Header Properties">
+                        <items jcr:primaryType="nt:unstructured">
+                        	<brandLogo
+                        		jcr:primaryType="nt:unstructured"
+                      			sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                enableNextGenDynamicMedia="{Boolean}true"
+                                fieldLabel="Logo"
+                                fileNameParameter="./logoName"
+                                fileReferenceParameter="./logoReference"
+                                mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                        		name="./brandLogo"/>
+                            <logoUrl jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                fieldLabel="Url for Logo"
+                                fieldDescription="Enter the Url"
+                                rootPath="/content"
+                                name="./logoUrl"/>
+                            <type jcr:primaryType="nt:unstructured"
+                          		sling:resourceType="granite/ui/components/coral/foundation/well"
+                          		jcr:title="Type">
+                          		<items jcr:primaryType="nt:unstructured">
+                          			<typeMulti
+                						jcr:primaryType="nt:unstructured"
+                						fieldLabel="Type List"
+                						sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                						composite="{Boolean}true">              
+                						<field
+                    						jcr:primaryType="nt:unstructured"
+                    						sling:resourceType="granite/ui/components/coral/foundation/container"
+                    						name="./typeMulti">
+                							<items jcr:primaryType="nt:unstructured">
+                    							<typeTitle
+                        							jcr:primaryType="nt:unstructured"
+                        							sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        							fieldLabel="Type title"
+                        							name="./typeTitle" />
+                    							<typeUrl
+                        							jcr:primaryType="nt:unstructured"
+                        							sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        							fieldLabel="Navigation URL"
+                        							name="./typeUrl" />
+                							</items>
+                						</field>
+            						</typeMulti>
+                        		</items>
+                            </type>
+                            <loginButtonName
+                        		jcr:primaryType="nt:unstructured"
+                        		sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        		fieldLabel="Login Button title"
+                        		name="./loginButtonName" />
+                    		<loginButtonUrl
+                        		jcr:primaryType="nt:unstructured"
+                        		sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        		fieldLabel="Login Button URL"
+                        		name="./loginButtonUrl" />
+                        	<registerButtonName
+                        		jcr:primaryType="nt:unstructured"
+                        		sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        		fieldLabel="Register Button title"
+                        		name="./registerButtonName" />
+                    		<registerButtonUrl
+                        		jcr:primaryType="nt:unstructured"
+                        		sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        		fieldLabel="Register Button URL"
+                        		name="./registerButtonUrl" />
+                        </items>
+                    </tab2>
+					<tab3 jcr:primaryType="nt:unstructured"
+                    	sling:resourceType="granite/ui/components/coral/foundation/container"
+                        jcr:title="Mega Menu">
+                        <items jcr:primaryType="nt:unstructured">
+                        	<mainMenuMulti
+                				jcr:primaryType="nt:unstructured"
+                				fieldLabel="Main Menu List"
+                				sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                				composite="{Boolean}true">              
+                				<field
+                    				jcr:primaryType="nt:unstructured"
+                    				sling:resourceType="granite/ui/components/coral/foundation/container"
+                    				name="./mainMenuMulti">
+                					<items jcr:primaryType="nt:unstructured">
+                    					<mainMenuTitle
+                        					jcr:primaryType="nt:unstructured"
+                        					sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        					fieldLabel="Main menu title"
+                        					name="./mainMenuTitle" />
+                    					<mainMenuUrl
+                        					jcr:primaryType="nt:unstructured"
+                        					sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        					fieldLabel="Main menu URL"
+                        					name="./mainMenuUrl" />
+                        				<subMenuMulti
+                							jcr:primaryType="nt:unstructured"
+                							fieldLabel="Sub Menu List"
+                							sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                							composite="{Boolean}true">              
+                							<field
+                    							jcr:primaryType="nt:unstructured"
+                    							sling:resourceType="granite/ui/components/coral/foundation/container"
+                    							name="./subMenuMulti">
+                								<items jcr:primaryType="nt:unstructured">
+                    								<subMenuTitle
+                        								jcr:primaryType="nt:unstructured"
+                        								sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        								fieldLabel="Sub menu title"
+                        								name="./subMenuTitle" />
+                    								<subMenuUrl
+                        								jcr:primaryType="nt:unstructured"
+                        								sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        								fieldLabel="Sub menu URL"
+                        								name="./subMenuUrl" />
+                								</items>
+                							</field>
+            							</subMenuMulti>
+                					</items>
+                				</field>
+            				</mainMenuMulti>
+               			</items>
+					</tab3>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

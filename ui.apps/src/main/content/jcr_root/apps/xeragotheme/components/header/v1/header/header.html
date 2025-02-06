@@ -1,0 +1,120 @@
+<sly data-sly-use.model="com.theme.xerago.core.models.HeaderModel"/>
+<div class="header-v1 main-header-area">
+	<div class="top-header topbar-area">
+		<div class="container-fluid">
+			<div class="row align-items-center">
+				<div class="col-lg-6 col-md-6">
+					<ul class="topbar-information">
+					<li>
+                          <a href="#">${model.phoneNumber}</a>
+                      </li>
+                      <li>
+                          <a href="#">
+                              <span class="__cf_email__">${model.email}</span>
+                          </a>
+                      </li>
+					</ul>
+				</div>
+				<div class="col-lg-6 col-md-6">
+					<ul class="topbar-action">
+						<li data-sly-repeat.topNav="${model.topNavMulti}">
+                          <a href="${topNav.topNavUrl}">${topNav.topNavTitle}</a>
+                      	</li>
+                      	<li class="dropdown language-option">
+                          <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <i class="ri-global-line"></i>
+                              <span class="lang-name">English</span>
+                          </button>
+                          <div class="dropdown-menu language-dropdown-menu" data-sly-list.langList="${model.langMulti}">
+                              <a class="dropdown-item" href="#">
+                                  <img src="${langList.langIconReference}" alt="flag" />
+                                  ${langList.language}
+                              </a>
+                          </div>
+                      </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="navbar-area">
+		<div class="main-responsive-nav">
+			<div class="container">
+				<div class="main-responsive-menu">
+					<div class="logo">
+						<a href="${model.logoUrl}">
+							<img src="${model.logoReference}" class="white-logo" alt="image">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="main-navbar">
+		<div class="container-fluid">
+			<nav class="navbar navbar-expand-md navbar-light">
+				<a class="navbar-brand" href="${model.logoUrl}">
+					<img src="${model.logoReference}" class="white-logo" alt="image">
+				</a>
+				
+				<div class="navbar-list">
+					<ul data-sly-list.pageType="${model.typeMulti}">
+                    	<li><a href="${pageType.typeUrl}">${pageType.typeTitle}</a></li>
+                    </ul>
+                </div>
+                
+                <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                	<ul class="navbar-nav ms-auto" data-sly-list.mainMenu="${model.mainMenuMulti}">
+                		<li class="nav-item">
+                			<a href="${mainMenu.mainMenuUrl}" class="nav-link active">
+                                ${mainMenu.mainMenuTitle}
+                        		<i class="ri-arrow-down-s-line"></i>
+                        	</a>
+                        	<ul class="dropdown-menu" data-sly-list.subMenu="${mainMenu.subMenuMulti}">
+                            	<li class="nav-item">
+                                	<a href="${subMenu.subMenuUrl}" class="nav-link active">${subMenu.subMenuTitle}</a>
+                                </li>
+                            </ul>
+                        </li>
+                	</ul>
+                	
+                	<div class="others-options d-flex align-items-center">
+                		<div class="option-item">
+                              <a href="${model.loginButtonUrl}" class="optional-btn">${model.loginButtonName}</a>
+                        </div>
+                          <div class="option-item">
+                              <a href="${model.registerButtonUrl}" class="default-btn">${model.registerButtonName}</a>
+                          </div>
+                	</div>
+                </div>
+			</nav>
+		</div>
+	</div>
+	
+	<div class="others-option-for-responsive">
+		<div class="container">
+			<div class="dot-menu">
+				<div class="inner">
+					<div class="circle circle-one"></div>
+                    <div class="circle circle-two"></div>
+                    <div class="circle circle-three"></div>
+				</div>
+			</div>
+			
+			<div class="container">
+				<div class="option-inner">
+					<div class="others-options d-flex align-items-center">
+						<div class="option-item">
+                        	<a href="${model.loginButtonUrl}" class="optional-btn">${model.loginButtonName}</a>
+                        </div>
+                        <div class="option-item">
+                        	<a href="${model.registerButtonUrl}" class="default-btn">${model.registerButtonName}</a>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+			
+	

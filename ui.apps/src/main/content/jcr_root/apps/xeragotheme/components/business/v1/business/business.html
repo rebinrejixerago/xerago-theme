@@ -1,0 +1,16 @@
+ <sly data-sly-use.model="com.theme.xerago.core.models.BusinessModel"/>
+ <div class="partner-area ptb-100">
+    <div class="container">
+        <div class="partner-title">
+            <h3>${model.title}</h3>
+        </div>
+        <div class="partner-slides owl-carousel owl-theme" data-sly-list.partnerList="${model.partnerList}">
+            <div class="partner-image">
+                <a href="${partnerList.partnerUrl}"><img src="${partnerList.partnerReference}" alt="image"></a>
+            </div>
+        </div>
+        <div class="partner-optional-text">
+            <p>${model.description} <span><a href="${model.buttonUrl}">${model.buttonName}</a></span></p>
+        </div>
+    </div>
+</div>
