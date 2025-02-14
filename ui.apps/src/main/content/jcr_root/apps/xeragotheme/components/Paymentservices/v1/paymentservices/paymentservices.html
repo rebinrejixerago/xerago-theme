@@ -1,0 +1,20 @@
+<sly data-sly-use.model="com.theme.xerago.core.models.PaymentServicesModel"/>
+<div class="paiement-area ptb-100">
+		    <div class="container">
+		        <div class="row align-items-center">
+		            <div class="col-lg-6 col-md-12">
+		                <div class="paiement-content" data-aos="fade-right" data-aos-delay="50" data-aos-duration="500" data-aos-once="true">
+		                    <span>${model.subtitle}</span>
+		                    <h3>${model.title}</h3>
+		                    <p data-sly-test="${model.description}" class="rich-text">${model.description @ context='html'}</p>
+		                </div>
+		            </div>
+
+		            <div class="col-lg-6 col-md-12">
+		                <div class="paiement-image" data-aos="fade-up" data-aos-delay="50" data-aos-duration="500" data-aos-once="true">
+		                    <img src="${model.servicesImage}" alt="image">
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>

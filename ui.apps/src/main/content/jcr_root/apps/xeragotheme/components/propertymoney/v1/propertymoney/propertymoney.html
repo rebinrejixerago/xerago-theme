@@ -1,0 +1,22 @@
+<sly data-sly-use.model="com.theme.xerago.core.models.PropertyMoneyMultiModel"/>
+<div class="benefits-area pt-100 pb-75">
+    <div class="container">
+        <div class="section-title">
+            <span>${model.subtitle}</span>
+            <h3>${model.title}</h3>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-sm-6" data-sly-repeat.features="${model.features}">
+                <div class="single-benefits-card" data-aos="fade-up" data-aos-delay="30" data-aos-duration="300" data-aos-once="true">
+                    <div class="benefits-content">
+                        <div class="benefits-image">
+                            <img src="${features.iconreference}" alt="image">
+                        </div>
+                        <h3>${features.icontitle}</h3>
+                        <p>${features.description}</p>
+                    </div>
+                </div>
+            </div>
+			</div>
+			</div>
