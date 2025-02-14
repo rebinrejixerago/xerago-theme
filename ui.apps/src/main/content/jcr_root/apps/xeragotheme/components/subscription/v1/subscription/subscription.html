@@ -13,7 +13,7 @@
                         <img src="${cards.iconReference}" alt="image" />
                     </div>
                     <h3>${cards.cardTitle}</h3>
-                    <p>${cards.cardDescription}</p>
+                    <p>${cards.cardDescription @ context="html"}</p>
                     <a href="${cards.buttonUrl}" class="global-btn">${cards.buttonName}</a>
                 </div>
             </div>
