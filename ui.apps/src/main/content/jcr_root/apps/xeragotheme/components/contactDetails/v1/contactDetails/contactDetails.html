@@ -10,20 +10,20 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="contact-information-card">
                             <div class="icon">
-                                <img src="${contactList.contactReference}" alt="image">
+                                <img src="${contactList.contactReference}" alt="image"/>
                             </div>
                             <h3>${contactList.contactTitle}:</h3>
-                            <p data-sly-test="${contactList.address}">${contactList.address}</p>
+                            <p data-sly-test="${contactList.address}">${contactList.address  @ context="html"}</p>
                             <p data-sly-test="${contactList.emailList}" data-sly-repeat.emailList="${contactList.emailList}">
-                            	<a href="mailto:test@xerago.com">
+                            	<a href="mailto:${emailList.emailId}">
                             		<span class="__cf_email__" data-cfemail="bdd5d8d1d1d2fdced3c8dbdb93ded2d0">${emailList.emailId}</span>
                             	</a> 
                             </p>
                         	<p data-sly-test="${contactList.phoneList}" data-sly-repeat.phoneList="${contactList.phoneList}">
-                        		<a href="tel:44789289528790">${phoneList.phoneNumber}</a>
+                        		<a href="tel:${phoneList.phoneNumber}">${phoneList.phoneNumber}</a>
                         	</p>
                         	<p data-sly-test="${contactList.faxList}" data-sly-repeat.faxList="${contactList.faxList}">
-                        		<a href="tel:12129876543">${faxList.fax}</a> 
+                        		<a href="tel:${faxList.fax}">${faxList.fax}</a> 
                         	</p>
                         </div>
                     </div>

@@ -1,0 +1,23 @@
+<sly data-sly-use.model="com.theme.xerago.core.models.OurFunfactModel"/>
+<div class="fun-fact-area pt-100 pb-75">
+    <div class="container">
+      <div class="section-title">
+        <span>${model.subTitle}</span>
+        <h2>${model.title}</h2>
+      </div>
+
+      <div class="row justify-content-center" data-sly-list.overviewSection="${model.overviewSection}">
+        <div class="col-lg-3 col-sm-6 col-6">
+          <div
+            class="single-funfact-box"
+            data-aos="fade-up"
+            data-aos-delay="50"
+            data-aos-duration="500"
+            data-aos-once="true"
+          >
+            ${overviewSection.metrics @ context="html"}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

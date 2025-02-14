@@ -47,8 +47,9 @@
                         							name="./topNavTitle" />
                     							<topNavUrl
                         							jcr:primaryType="nt:unstructured"
-                        							sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        							sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                         							fieldLabel="Navigation URL"
+                        							rootPath="/content"
                         							name="./topNavUrl" />
                 							</items>
                 						</field>
@@ -124,8 +125,9 @@
                         							name="./typeTitle" />
                     							<typeUrl
                         							jcr:primaryType="nt:unstructured"
-                        							sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        							sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                         							fieldLabel="Navigation URL"
+                        							rootPath="/content"
                         							name="./typeUrl" />
                 							</items>
                 						</field>
@@ -139,8 +141,9 @@
                         		name="./loginButtonName" />
                     		<loginButtonUrl
                         		jcr:primaryType="nt:unstructured"
-                        		sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        		sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                         		fieldLabel="Login Button URL"
+                        		rootPath="/content"
                         		name="./loginButtonUrl" />
                         	<registerButtonName
                         		jcr:primaryType="nt:unstructured"
@@ -149,8 +152,9 @@
                         		name="./registerButtonName" />
                     		<registerButtonUrl
                         		jcr:primaryType="nt:unstructured"
-                        		sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        		sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                         		fieldLabel="Register Button URL"
+                        		rootPath="/content"
                         		name="./registerButtonUrl" />
                         </items>
                     </tab2>
@@ -175,8 +179,9 @@
                         					name="./mainMenuTitle" />
                     					<mainMenuUrl
                         					jcr:primaryType="nt:unstructured"
-                        					sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        					sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                         					fieldLabel="Main menu URL"
+                        					rootPath="/content"
                         					name="./mainMenuUrl" />
                         				<subMenuMulti
                 							jcr:primaryType="nt:unstructured"
@@ -195,8 +200,9 @@
                         								name="./subMenuTitle" />
                     								<subMenuUrl
                         								jcr:primaryType="nt:unstructured"
-                        								sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        								sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                         								fieldLabel="Sub menu URL"
+                        								rootPath="/content"
                         								name="./subMenuUrl" />
                 								</items>
                 							</field>

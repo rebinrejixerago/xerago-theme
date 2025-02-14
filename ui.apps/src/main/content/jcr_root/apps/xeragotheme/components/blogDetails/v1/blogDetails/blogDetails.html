@@ -1,0 +1,25 @@
+<sly data-sly-use.model="com.theme.xerago.core.models.BlogDetailsModel"/>
+<div class="blog-details-area ptb-100">
+	<div class="container">
+        <div class="blog-details-desc">
+            <h3>${model.title}</h3>
+            <div class="article-image">
+                <img src="${model.articleImageReference}" alt="Oleev">
+            </div>
+            <div class="article-info-item d-flex justify-content-between align-items-center">
+                <div class="info-content">
+                    <img src="${model.authorImageReference}" class="rounded-circle" alt="Oleev">
+                    <h4>${model.authorName}</h4>
+                    <span>${model.authorRole}</span>
+                </div>
+                <ul class="info-social" data-sly-list.socialProfiles="${model.socialMediaProfiles}">
+                    <li>
+                        <a href="${socialProfiles.socialMediaUrl}" target="_blank">
+                            <img src="${socialProfiles.socialReference}" alt="Social Media Icon">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+	</div>
+</div>

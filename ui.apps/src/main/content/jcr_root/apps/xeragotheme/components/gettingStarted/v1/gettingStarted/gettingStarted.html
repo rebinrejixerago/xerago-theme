@@ -1,0 +1,30 @@
+<sly data-sly-use.model="com.theme.xerago.core.models.GettingStartedModel"/>
+<div class="getting-started-area pt-100 pb-75">
+    <div class="container">
+      <div class="section-title">
+        <span>${model.subTitle}</span>
+        <h2>${model.subTitle}</h2>
+      </div>
+
+      <div class="row justify-content-center" data-sly-list.cardList="${model.cardList}">
+        <div class="col-lg-3 col-sm-6">
+          <div
+            class="single-getting-started-card"
+            data-aos="fade-up"
+            data-aos-delay="50"
+            data-aos-duration="500"
+            data-aos-once="true"
+          >
+            <div class="getting-image">
+              <img
+                src="${cardList.cardReference}"
+                alt="image"
+              />
+            </div>
+            <h3>${cardList.cardTitle}</h3>
+            <p>${cardList.cardDescription @ context="html"}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

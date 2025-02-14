@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+	xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    jcr:title="Features Area Properties">
+	<content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Title"
+                        name="./title"/>
+                    <subTitle
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Sub Title"
+                        name="./subTitle"/>
+                    <featureImage
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                        enableNextGenDynamicMedia="{Boolean}true"
+                        fieldLabel="Feature Image"
+                        fileNameParameter="./featurefileName"
+                        fileReferenceParameter="./featureReference"
+                        mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                   		name="./featureImage"/>
+                    <featureCard
+                		jcr:primaryType="nt:unstructured"
+                		fieldLabel="Feature Card"
+                		sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                		composite="{Boolean}true">              
+                		<field
+         					jcr:primaryType="nt:unstructured"
+                    		sling:resourceType="granite/ui/components/coral/foundation/container"
+                    		name="./featureCard">
+                			<items jcr:primaryType="nt:unstructured">
+                				<cardImage
+			                        jcr:primaryType="nt:unstructured"
+			                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+			                        enableNextGenDynamicMedia="{Boolean}true"
+			                        fieldLabel="Card Image"
+			                        fileNameParameter="./cardfileName"
+			                        fileReferenceParameter="./cardReference"
+			                        mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+			                   		name="./cardImage"/>
+                    			<cardTitle
+                        			jcr:primaryType="nt:unstructured"
+                       				sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    				fieldLabel="Card Title"
+                       				name="./cardTitle" />
+                       			<cardContent
+			                		jcr:primaryType="nt:unstructured"
+			                		fieldLabel="Card Content"
+			                		sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+			                		composite="{Boolean}true">              
+			                		<field
+			         					jcr:primaryType="nt:unstructured"
+			                    		sling:resourceType="granite/ui/components/coral/foundation/container"
+			                    		name="./cardContent">
+			                			<items jcr:primaryType="nt:unstructured">
+			                				<contentPoints
+                        						jcr:primaryType="nt:unstructured"
+			                       				sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+			                    				fieldLabel="Content Points"
+			                       				name="./contentPoints"/>
+                						</items>
+			                		</field>
+                       			</cardContent>
+			                </items>
+                		</field>
+            		</featureCard>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

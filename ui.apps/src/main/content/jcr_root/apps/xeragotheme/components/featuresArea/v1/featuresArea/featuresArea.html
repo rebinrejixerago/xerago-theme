@@ -1,0 +1,55 @@
+<sly data-sly-use.model="com.theme.xerago.core.models.FeatureAreaModel"/>
+<div class="features-area ptb-100">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8 col-md-12">
+          <div
+            class="features-content"
+            data-aos="fade-right"
+            data-aos-delay="50"
+            data-aos-duration="500"
+            data-aos-once="true"
+          >
+            <span>${model.subTitle}</span>
+            <h3>${model.title}</h3>
+          </div>
+          <div class="row justify-content-center" data-sly-list.featureCard="${model.featureCard}">
+            <div class="col-lg-6 col-md-6">
+              <div
+                class="single-features-card"
+                data-aos="fade-up"
+                data-aos-delay="50"
+                data-aos-duration="500"
+                data-aos-once="true"
+              >
+                <div class="icon-image">
+                  <img src="${featureCard.cardImage}" alt="image" />
+                </div>
+                <div class="content">
+                  <h3>${featureCard.cardTitle}</h3>
+
+                  <ul class="list" data-sly-list.cardContent="${featureCard.cardContent}">
+                    <li>
+                      <i class="ri-checkbox-circle-line"></i> ${cardContent.contentPoints}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-12">
+          <div
+            class="features-vector-image"
+            data-aos="fade-left"
+            data-aos-delay="50"
+            data-aos-duration="500"
+            data-aos-once="true"
+          >
+            <img src="${model.featureReference}" alt="image" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

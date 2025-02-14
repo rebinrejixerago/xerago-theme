@@ -1,0 +1,22 @@
+<sly data-sly-use.model="com.theme.xerago.core.models.SubscriptionModel"/>
+<div class="global-transfers-area pt-100 pb-75">
+    <div class="container">
+        <div class="section-title">
+            <span>${model.subTitle}</span>
+            <h2>${model.title}</h2>
+        </div>
+
+        <div class="row justify-content-center" data-sly-list.cards=${model.cardSection}>
+            <div class="col-lg-3 col-sm-6">
+                <div class="single-global-transfers-card" data-aos="fade-up" data-aos-delay="50" data-aos-duration="500" data-aos-once="true">
+                    <div class="icon">
+                        <img src="${cards.iconReference}" alt="image" />
+                    </div>
+                    <h3>${cards.cardTitle}</h3>
+                    <p>${cards.cardDescription}</p>
+                    <a href="${cards.buttonUrl}" class="global-btn">${cards.buttonName}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

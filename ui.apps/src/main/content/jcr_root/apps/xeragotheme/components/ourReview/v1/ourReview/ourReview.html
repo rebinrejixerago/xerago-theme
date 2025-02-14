@@ -1,0 +1,34 @@
+<sly data-sly-use.model="com.theme.xerago.core.models.OurReviewModel"/>
+<div class="review-area bg-F4F5F5 ptb-100">
+    <div class="container">
+        <div class="section-title">
+            <span>${model.subTitle}</span>
+            <h2>${model.title}</h2>
+        </div>
+
+        <div class="review-slides-two owl-carousel owl-theme" data-sly-list.reviewSection="${model.reviewSection}">
+            <div class="single-review-card" data-aos="fade-up" data-aos-delay="50" data-aos-duration="500" data-aos-once="true">
+                <ul class="review-rating">
+                    <li><i class="ri-star-line"></i></li>
+                    <li><i class="ri-star-line"></i></li>
+                    <li><i class="ri-star-line"></i></li>
+                    <li><i class="ri-star-line"></i></li>
+                    <li><i class="ri-star-line"></i></li>
+                </ul>
+                <p>${reviewSection.review @ context="html"}</p>
+                <div class="review-info">
+                    <img src="${reviewSection.reviewerReference}" alt="image">
+                    <h3>${reviewSection.reviewerName}</h3>
+                    <span>${reviewSection.reviewerDesignation}</span>
+                </div>
+                <div class="reviewquote-image">
+                    <img src="${model.quoteReference}" alt="image">
+                </div>
+            </div>
+        </div>
+
+        <div class="review-optional-content">
+            <p>${model.optionalContent}</p>
+        </div>
+    </div>
+</div>

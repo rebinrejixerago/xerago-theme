@@ -1,0 +1,29 @@
+<sly data-sly-use.model="com.theme.xerago.core.models.CoverageAreaModel"/>
+<div class="coverage-area pt-100 pb-75">
+    <div class="container">
+      <div class="section-title">
+        <span>${model.subTitle}</span>
+        <h2>${model.title}</h2>
+      </div>
+
+      <div class="row justify-content-center" data-sly-list.singleCoverageCard="${model.singleCoverageCard}">
+        <div class="col-lg-3 col-sm-6">
+          <div
+            class="single-coverage-card"
+            data-aos="fade-up"
+            data-aos-delay="10"
+            data-aos-duration="100"
+            data-aos-once="true"
+          >
+            <div class="content">
+              <div class="coverage-image">
+                <img src="${singleCoverageCard.coverageReference}" alt="image" />
+              </div>
+              <h3>${singleCoverageCard.cardTitle}</h3>
+              <p>${singleCoverageCard.cardDescription}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </div>

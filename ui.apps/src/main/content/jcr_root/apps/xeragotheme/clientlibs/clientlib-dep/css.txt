@@ -7,3 +7,6 @@ remixicon.css
 aos.css
 owl.carousel.min.css
 owl.theme.default.min.css
+animate.min.css
+flaticon.css
+odometer.min.css

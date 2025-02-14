@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+	xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    jcr:title="Coverage Area Properties">
+	<content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Title"
+                        name="./title"/>
+                    <subTitle
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Sub Title"
+                        name="./subTitle"/>
+                    <singleCoverageCard
+                		jcr:primaryType="nt:unstructured"
+                		fieldLabel="Page Navigation"
+                		sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                		composite="{Boolean}true">              
+                		<field
+         					jcr:primaryType="nt:unstructured"
+                    		sling:resourceType="granite/ui/components/coral/foundation/container"
+                    		name="./singleCoverageCard">
+                			<items jcr:primaryType="nt:unstructured">
+                				<coverageImage
+                        			jcr:primaryType="nt:unstructured"
+                        			sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                        			enableNextGenDynamicMedia="{Boolean}true"
+                        			fieldLabel="Coverage Image"
+                        			fileNameParameter="./coveragefileName"
+                        			fileReferenceParameter="./coverageReference"
+                        			mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                   					name="./coverageImage"/>
+                    			<cardTitle
+                        			jcr:primaryType="nt:unstructured"
+                       				sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    				fieldLabel="Card Title"
+                       				name="./cardTitle" />
+                       			<cardDescription
+                        			jcr:primaryType="nt:unstructured"
+                       				sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    				fieldLabel="Card Description"
+                       				name="./cardDescription" />
+                			</items>
+                		</field>
+            		</singleCoverageCard>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

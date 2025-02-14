@@ -1,0 +1,31 @@
+<sly data-sly-use.model="com.theme.xerago.core.models.MainBannerModel"/>
+<div class="main-banner-area">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-4 col-md-12" data-aos="fade-right" data-aos-delay="50" data-aos-duration="500" data-aos-once="true">
+                <div class="main-banner-content">
+                    <span>${model.subTitle}</span>
+                    <h1>${model.title}</h1>
+                    <p>${model.description @ context="html"}</p>
+
+                    <div class="banner-btn">
+                        <a href="${model.bannerButtonUrl}" class="default-btn">${model.bannerButtonName}</a>
+                    </div>
+
+                    <ul class="trust-content" data-sly-list.trustContent="${model.trustContent}">
+                        <li>
+                            <img src="${trustContent.trustReference}" alt="image">
+                            <span>${trustContent.imageDes}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-12">
+                <div class="main-banner-image" data-speed="0.05" data-revert="true">
+                    <img src="${model.bannerReference}" alt="image" data-aos="fade-down" data-aos-delay="50" data-aos-duration="500" data-aos-once="true">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

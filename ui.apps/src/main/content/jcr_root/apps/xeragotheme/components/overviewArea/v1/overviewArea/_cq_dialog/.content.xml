@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+	xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    jcr:title="Overview Area Properties">
+	<content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Title"
+                        name="./title"/>
+                    <subTitle
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Sub Title"
+                        name="./subTitle"/>
+            		<personalAcc jcr:primaryType="nt:unstructured"
+						sling:resourceType="granite/ui/components/coral/foundation/well"
+					    jcr:title="Personal Account Navigation">
+					    <items jcr:primaryType="nt:unstructured">
+					    	<perButtonName
+						    	jcr:primaryType="nt:unstructured"
+				                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+			                    fieldLabel="Button Name"
+				                name="./perButtonName"/>
+						   	<perButtonUrl jcr:primaryType="nt:unstructured"
+						     	sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+						     	fieldLabel="Button Url"
+						     	fieldDescription="Enter the Url"
+						     	rootPath="/content"
+						     	name="./perButtonUrl"/>
+					    </items>
+					</personalAcc>
+					<businessAcc jcr:primaryType="nt:unstructured"
+					    sling:resourceType="granite/ui/components/coral/foundation/well"
+					    jcr:title="Business Navigation">
+					    <items jcr:primaryType="nt:unstructured">
+					    	<busButtonName
+						    	jcr:primaryType="nt:unstructured"
+				                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+			                    fieldLabel="Button Name"
+				                name="./busButtonName"/>
+						   	<busButtonUrl jcr:primaryType="nt:unstructured"
+						     	sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+						     	fieldLabel="Button Url"
+						     	fieldDescription="Enter the Url"
+						     	rootPath="/content"
+						     	name="./busButtonUrl"/>
+					    </items>
+					</businessAcc>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>
