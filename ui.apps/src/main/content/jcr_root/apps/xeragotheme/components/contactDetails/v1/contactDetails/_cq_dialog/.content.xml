@@ -22,7 +22,7 @@
                     <subTitle
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                        fieldLabel="Title"
+                        fieldLabel="Sub Title"
                         name="./subTitle"/>
                     <contactList
                 		jcr:primaryType="nt:unstructured"
