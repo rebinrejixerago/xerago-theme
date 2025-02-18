@@ -1,17 +1,19 @@
 <sly data-sly-use.model="com.theme.xerago.core.models.AdvisoryBoardModel"/>
-<div class="advisoryboard-xerago">
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${template.placeholder @ isEmpty=!model.title}"/>
+<div class="advisoryboard-xerago" data-sly-test="${model.title}">
 	<div class="team-area bg-F7F7F7 pt-100 pb-100">
 		<div class="container">
 			<div class="section-title">
 				<span>${model.subTitle}</span>
 				<h2>${model.title}</h2>
 			</div>
-			<div class="row justify-content-center">
+			<div class="row justify-content-center" data-sly-test="${model.advisoryMembers}">
 				<div class="col-lg-3 col-sm-6" data-sly-repeat.advisoryMembers="${model.advisoryMembers}">
 					<div class="single-team-card">
-						<div class="team-image">
+						<div class="team-image" data-sly-test="${advisoryMembers.memberReference}">
 							<img src="${advisoryMembers.memberReference}" alt="Oleev">
-							<ul class="social">
+							<ul class="social" data-sly-test="${advisoryMembers.socialMediaProfiles}">
 								<li data-sly-repeat.socialMediaProfiles="${advisoryMembers.socialMediaProfiles}">
 									<a href="${socialMediaProfiles.socialMediaProfiles}" target="_blank">
                                     	<i class="ri-facebook-fill"></i>
@@ -19,7 +21,7 @@
 								</li>
 							</ul>
 						</div>
-						<div class="team-content">
+						<div class="team-content" data-sly-test="${advisoryMembers.memberName}">>
 							<h3>${advisoryMembers.memberName}</h3>
                         	<span>${advisoryMembers.memberDesig}</span>
 						</div>

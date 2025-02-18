@@ -1,5 +1,7 @@
 <sly data-sly-use.model="com.theme.xerago.core.models.FeatureAreaModel"/>
-<div class="features-area ptb-100">
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${template.placeholder @ isEmpty=!model.title}"/>
+<div class="features-area ptb-100" data-sly-test="${model.title}">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-8 col-md-12">
@@ -10,10 +12,10 @@
             data-aos-duration="500"
             data-aos-once="true"
           >
-            <span>${model.subTitle}</span>
+            <span data-sly-test="${model.subTitle}">${model.subTitle}</span>
             <h3>${model.title}</h3>
           </div>
-          <div class="row justify-content-center" data-sly-list.featureCard="${model.featureCard}">
+          <div class="row justify-content-center" data-sly-test="${model.featureCard}" data-sly-list.featureCard="${model.featureCard}">
             <div class="col-lg-6 col-md-6">
               <div
                 class="single-features-card"
@@ -22,14 +24,14 @@
                 data-aos-duration="500"
                 data-aos-once="true"
               >
-                <div class="icon-image">
+                <div class="icon-image" data-sly-test="${featureCard.cardImage}">
                   <img src="${featureCard.cardImage}" alt="image" />
                 </div>
-                <div class="content">
+                <div class="content" data-sly-test="${featureCard.cardTitle}">
                   <h3>${featureCard.cardTitle}</h3>
 
-                  <ul class="list" data-sly-list.cardContent="${featureCard.cardContent}">
-                    <li>
+                  <ul class="list" data-sly-test="${featureCard.cardContent}" data-sly-list.cardContent="${featureCard.cardContent}">
+                    <li data-sly-test="${cardContent.contentPoints}">
                       <i class="ri-checkbox-circle-line"></i> ${cardContent.contentPoints}
                     </li>
                   </ul>
@@ -39,7 +41,7 @@
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-12">
+        <div class="col-lg-4 col-md-12" data-sly-test="${model.featureReference}">
           <div
             class="features-vector-image"
             data-aos="fade-left"

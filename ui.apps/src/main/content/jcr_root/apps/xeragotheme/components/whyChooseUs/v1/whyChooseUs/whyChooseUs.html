@@ -1,5 +1,7 @@
 <sly data-sly-use.model="com.theme.xerago.core.models.WhyChooseUsModel"/>
-<div class="why-choose-us-area ptb-100">
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${template.placeholder @ isEmpty=!model.title}"/>
+<div class="why-choose-us-area ptb-100" data-sly-test="${model.title}">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6 col-md-12">
@@ -10,16 +12,16 @@
             data-aos-duration="500"
             data-aos-once="true"
           >
-            <span>${model.subTitle}</span>
+            <span data-sly-test="${model.subTitle}">${model.subTitle}</span>
             <h3>
               ${model.title}
             </h3>
-            <p>
+            <p data-sly-test="${model.description}">
               ${model.description @ context="html"}
             </p>
 
-            <ul class="choose-us-list" data-sly-list.chooseUsList="${model.chooseUs}">
-              <li>
+            <ul class="choose-us-list" data-sly-test="${model.chooseUs}" data-sly-list.chooseUsList="${model.chooseUs}">
+              <li data-sly-test="${chooseUsList.listItem}">
                 <i class="ri-checkbox-circle-line"></i>
                 ${chooseUsList.listItem}
               </li>
@@ -27,7 +29,7 @@
           </div>
         </div>
 
-        <div class="col-lg-6 col-md-12">
+        <div class="col-lg-6 col-md-12" data-sly-test="${model.leftReference}">
           <div class="why-choose-us-image">
             <div class="row align-items-center">
               <div class="col-lg-6 col-sm-6">
@@ -44,7 +46,7 @@
                   />
                 </div>
               </div>
-              <div class="col-lg-6 col-sm-6">
+              <div class="col-lg-6 col-sm-6" data-sly-test="${model.rightTopReference}">
                 <div
                   class="choose-image mb-25"
                   data-aos="fade-left"
@@ -63,6 +65,7 @@
                   data-aos-delay="50"
                   data-aos-duration="500"
                   data-aos-once="true"
+                  data-sly-test="${model.rightBottomReference}"
                 >
                   <img
                     src="${model.rightBottomReference}"

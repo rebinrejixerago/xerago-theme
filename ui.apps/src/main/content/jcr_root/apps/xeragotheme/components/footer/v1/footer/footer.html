@@ -1,5 +1,7 @@
 <sly data-sly-use.model="com.theme.xerago.core.models.FooterModel"/>
- <footer class="footer-area pt-100" id="footer-header">
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${template.placeholder @ isEmpty=!model.logoReference}"/>
+ <footer class="footer-area pt-100" id="footer-header" data-sly-test="${model.logoReference}">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-3 col-md-6">
@@ -20,7 +22,7 @@
           </div>
         </div>
 
-        <div class="col-lg-3 col-md-6" data-sly-repeat.footerMenus="${model.footerMenus}">
+        <div class="col-lg-3 col-md-6" data-sly-test="${model.footerMenus}" data-sly-repeat.footerMenus="${model.footerMenus}">
           <div
             class="single-footer-widget ps-5"
             data-aos="fade-up"
@@ -28,15 +30,15 @@
             data-aos-duration="600"
             data-aos-once="true"
           >
-            <h3>${footerMenus.sectionTitle}</h3>
+            <h3 data-sly-test="${footerMenus.sectionTitle}">${footerMenus.sectionTitle}</h3>
 
-            <ul class="quick-links" data-sly-list.relatedPages="${footerMenus.relatedPages}">
-              <li><a href="${relatedPages.pageUrl}">${relatedPages.pageName}</a></li>
+            <ul class="quick-links" data-sly-test="${footerMenus.relatedPages}" data-sly-list.relatedPages="${footerMenus.relatedPages}">
+              <li data-sly-test="${relatedPages.pageName}"><a href="${relatedPages.pageUrl}">${relatedPages.pageName}</a></li>
             </ul>
           </div>
         </div>
 
-        <div class="col-lg-3 col-md-6">
+        <div class="col-lg-3 col-md-6" data-sly-test="${model.contactTitle}">
           <div
             class="single-footer-widget"
             data-aos="fade-up"
@@ -47,10 +49,10 @@
             <h3>${model.contactTitle}</h3>
 
             <ul class="info-links">
-              <li>
+              <li data-sly-test="${model.addressTitle}">
                 <span>${model.addressTitle}:</span> ${model.address}
               </li>
-              <li>
+              <li data-sly-test="${model.emailTitle}">
                 <span>${model.emailTitle}:</span>
                 <a
                   href="#"
@@ -60,10 +62,10 @@
                 >
               </li>
               <li>
-                <span>${model.phoneTitle}:</span>
-                <a href="#">${model.phoneNumber}</a>
+                <span data-sly-test="${model.phoneTitle}">${model.phoneTitle}:</span>
+                <a href="#" data-sly-test="${model.phoneNumber}">${model.phoneNumber}</a>
               </li>
-              <li>
+              <li data-sly-test="${model.faxTitle}">
                 <span>${model.faxTitle}:</span> <a href="#">${model.fax}</a>
               </li>
             </ul>
@@ -72,7 +74,7 @@
       </div>
     </div>
 
-    <div class="copyright-area">
+    <div class="copyright-area" data-sly-test="${model.copyright}">
       <div class="container">
         <div class="copyright-area-content">
           <p>

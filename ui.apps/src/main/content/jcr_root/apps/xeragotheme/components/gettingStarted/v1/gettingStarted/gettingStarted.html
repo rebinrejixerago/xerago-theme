@@ -1,12 +1,14 @@
 <sly data-sly-use.model="com.theme.xerago.core.models.GettingStartedModel"/>
-<div class="getting-started-area pt-100 pb-75">
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${template.placeholder @ isEmpty=!model.title}"/>
+<div class="getting-started-area pt-100 pb-75" data-sly-test="${model.title}">
     <div class="container">
       <div class="section-title">
-        <span>${model.subTitle}</span>
-        <h2>${model.subTitle}</h2>
+        <span data-sly-test="${model.subTitle}">${model.subTitle}</span>
+        <h2>${model.title}</h2>
       </div>
 
-      <div class="row justify-content-center" data-sly-list.cardList="${model.cardList}">
+      <div class="row justify-content-center" data-sly-test="${model.cardList}" data-sly-list.cardList="${model.cardList}">
         <div class="col-lg-3 col-sm-6">
           <div
             class="single-getting-started-card"
@@ -15,14 +17,14 @@
             data-aos-duration="500"
             data-aos-once="true"
           >
-            <div class="getting-image">
+            <div class="getting-image" data-sly-test="${cardList.cardReference}">
               <img
                 src="${cardList.cardReference}"
                 alt="image"
               />
             </div>
-            <h3>${cardList.cardTitle}</h3>
-            <p>${cardList.cardDescription @ context="html"}</p>
+            <h3 data-sly-test="${cardList.cardTitle}">${cardList.cardTitle}</h3>
+            <p data-sly-test="${cardList.cardDescription}">${cardList.cardDescription @ context="html"}</p>
           </div>
         </div>
       </div>

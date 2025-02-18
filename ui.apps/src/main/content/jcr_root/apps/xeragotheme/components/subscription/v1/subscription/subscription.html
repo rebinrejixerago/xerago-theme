@@ -1,20 +1,22 @@
 <sly data-sly-use.model="com.theme.xerago.core.models.SubscriptionModel"/>
-<div class="global-transfers-area pt-100 pb-75">
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${template.placeholder @ isEmpty=!model.title}"/>
+<div class="global-transfers-area pt-100 pb-75" data-sly-test="${model.title}">
     <div class="container">
         <div class="section-title">
-            <span>${model.subTitle}</span>
+            <span data-sly-test="${model.subTitle}">${model.subTitle}</span>
             <h2>${model.title}</h2>
         </div>
 
-        <div class="row justify-content-center" data-sly-list.cards=${model.cardSection}>
+        <div class="row justify-content-center" data-sly-test="${model.cardSection}" data-sly-list.cards=${model.cardSection}>
             <div class="col-lg-3 col-sm-6">
                 <div class="single-global-transfers-card" data-aos="fade-up" data-aos-delay="50" data-aos-duration="500" data-aos-once="true">
-                    <div class="icon">
+                    <div class="icon" data-sly-test="${cards.iconReference}">
                         <img src="${cards.iconReference}" alt="image" />
                     </div>
-                    <h3>${cards.cardTitle}</h3>
-                    <p>${cards.cardDescription @ context="html"}</p>
-                    <a href="${cards.buttonUrl}" class="global-btn">${cards.buttonName}</a>
+                    <h3 data-sly-test="${cards.cardTitle}">${cards.cardTitle}</h3>
+                    <p data-sly-test="${cards.cardDescription}">${cards.cardDescription @ context="html"}</p>
+                    <a href="${cards.buttonUrl}" class="global-btn" data-sly-test="${cards.buttonName}">${cards.buttonName}</a>
                 </div>
             </div>
         </div>

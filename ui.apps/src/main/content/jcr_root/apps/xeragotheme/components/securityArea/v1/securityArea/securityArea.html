@@ -1,11 +1,13 @@
 <sly data-sly-use.model="com.theme.xerago.core.models.SecurityAreaModel"/>
-<div class="security-area ptb-100">
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${template.placeholder @ isEmpty=!model.title}"/>
+<div class="security-area ptb-100" data-sly-test="${model.title}">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6 col-md-12">
           <div class="security-image">
             <div class="row align-items-center">
-              <div class="col-lg-6 col-sm-6">
+              <div class="col-lg-6 col-sm-6" data-sly-test="${model.leftReference}">
                 <div
                   class="security-wrap"
                   data-aos="fade-down"
@@ -16,7 +18,7 @@
                   <img src="${model.leftReference}" alt="image" />
                 </div>
               </div>
-              <div class="col-lg-6 col-sm-6">
+              <div class="col-lg-6 col-sm-6" data-sly-test="${model.rightTopReference}">
                 <div
                   class="security-wrap mb-25"
                   data-aos="fade-left"
@@ -32,6 +34,7 @@
                   data-aos-delay="50"
                   data-aos-duration="500"
                   data-aos-once="true"
+                  data-sly-test="${model.rightBottomReference}"
                 >
                   <img src="${model.rightBottomReference}" alt="image" />
                 </div>
@@ -48,13 +51,13 @@
             data-aos-duration="500"
             data-aos-once="true"
           >
-            <span>${model.subTitle}</span>
+            <span data-sly-test="${model.subTitle}">${model.subTitle}</span>
             <h3>${model.title}</h3>
-            <p>
+            <p data-sly-test="${model.description}">
               ${model.description @ context="html"}
             </p>
-            <div class="security-inner-box" data-sly-repeat.innerBox="${model.innerBox}">
-              <div class="icon">
+            <div class="security-inner-box" data-sly-test="${model.innerBox}" data-sly-repeat.innerBox="${model.innerBox}">
+              <div class="icon" data-sly-test="${innerBox.innerReference}">
                 <img src="${innerBox.innerReference}" alt="image" />
               </div>
               ${innerBox.innerSecurityContent @ context="html"}

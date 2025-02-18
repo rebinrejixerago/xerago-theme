@@ -1,18 +1,20 @@
 <sly data-sly-use.model="com.theme.xerago.core.models.ContactDetailsModel"/>
-<div class="contact-information-area pt-100 pb-75">
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${template.placeholder @ isEmpty=!model.title}"/>
+<div class="contact-information-area pt-100 pb-75" data-sly-test="${model.title}">
 	<div class="container">
     	<div class="section-title">
         	<span>${model.title}</span>
                     <h2>${model.subTitle}</h2>
                 </div>
 
-                <div class="row justify-content-center" data-sly-list.contactList="${model.contactList}">
+                <div class="row justify-content-center" data-sly-test="${model.contactList}" data-sly-list.contactList="${model.contactList}">
                     <div class="col-lg-3 col-md-6">
                         <div class="contact-information-card">
-                            <div class="icon">
+                            <div class="icon" data-sly-test="${contactList.contactReference}">
                                 <img src="${contactList.contactReference}" alt="image"/>
                             </div>
-                            <h3>${contactList.contactTitle}:</h3>
+                            <h3 data-sly-test="${contactList.contactTitle}">${contactList.contactTitle}:</h3>
                             <p data-sly-test="${contactList.address}">${contactList.address  @ context="html"}</p>
                             <p data-sly-test="${contactList.emailList}" data-sly-repeat.emailList="${contactList.emailList}">
                             	<a href="mailto:${emailList.emailId}">

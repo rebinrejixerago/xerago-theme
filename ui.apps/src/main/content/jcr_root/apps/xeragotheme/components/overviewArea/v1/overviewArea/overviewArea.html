@@ -1,5 +1,7 @@
 <sly data-sly-use.model="com.theme.xerago.core.models.OverviewAreaModel"/>
-<div class="overview-area ptb-100">
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${template.placeholder @ isEmpty=!model.title}"/>
+<div class="overview-area ptb-100" data-sly-test="${model.title}">
     <div class="container">
       <div
         class="overview-content"
@@ -8,18 +10,18 @@
         data-aos-duration="500"
         data-aos-once="true"
       >
-        <span>${model.subTitle}</span>
+        <span data-sly-test="${model.subTitle}">${model.subTitle}</span>
         <h3>
           ${model.title}
         </h3>
 
         <ul class="overview-btn-group" >
-          <li>
+          <li data-sly-test="${model.perButtonName}">
             <a href="${model.perButtonUrl}" class="default-btn"
               >${model.perButtonName}</a
             >
           </li>
-          <li>
+          <li data-sly-test="${model.busButtonName}">
             <a href="${model.busButtonUrl}" class="optional-btn"
               >${model.busButtonName}</a
             >

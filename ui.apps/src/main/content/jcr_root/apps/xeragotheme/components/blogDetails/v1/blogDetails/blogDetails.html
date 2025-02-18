@@ -1,19 +1,21 @@
 <sly data-sly-use.model="com.theme.xerago.core.models.BlogDetailsModel"/>
-<div class="blog-details-area ptb-100">
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${template.placeholder @ isEmpty=!model.title}"/>
+<div class="blog-details-area ptb-100" data-sly-test="${model.title}">
 	<div class="container">
         <div class="blog-details-desc">
             <h3>${model.title}</h3>
-            <div class="article-image">
+            <div class="article-image" data-sly-test="${model.articleImageReference}">
                 <img src="${model.articleImageReference}" alt="Oleev">
             </div>
-            <div class="article-info-item d-flex justify-content-between align-items-center">
+            <div class="article-info-item d-flex justify-content-between align-items-center" data-sly-test="${model.authorImageReference}">
                 <div class="info-content">
                     <img src="${model.authorImageReference}" class="rounded-circle" alt="Oleev">
                     <h4>${model.authorName}</h4>
                     <span>${model.authorRole}</span>
                 </div>
-                <ul class="info-social" data-sly-list.socialProfiles="${model.socialMediaProfiles}">
-                    <li>
+                <ul class="info-social" data-sly-test="${model.socialMediaProfiles}" data-sly-list.socialProfiles="${model.socialMediaProfiles}">
+                    <li data-sly-test="${socialProfiles.socialMediaUrl}">
                         <a href="${socialProfiles.socialMediaUrl}" target="_blank">
                             <img src="${socialProfiles.socialReference}" alt="Social Media Icon">
                         </a>

@@ -1,12 +1,14 @@
 <sly data-sly-use.model="com.theme.xerago.core.models.AboutUsModel"/>
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${template.placeholder @ isEmpty=!model.title}"/>
 <div class="about-us-xerago">
-	<div class="page-banner-area">
+	<div class="page-banner-area" data-sly-test="${model.title}">
 		<div class="container">
 			<div class="row align-items-center justify-content-center">
 				<div class="col-lg-6 col-md-6">
-					<div class="page-banner-content">
+					<div class="page-banner-content" data-sly-test="${model.title}">
 						<h2>${model.title}</h2>
-						<ul>
+						<ul data-sly-test="${model.pageNav}">
                         	<li data-sly-repeat.pageNav="${model.pageNav}">
                             	<a href="${pageNav.pageUrl}">${pageNav.pageName}</a>
                         	</li>
@@ -15,9 +17,9 @@
 					</div>
 				</div>
 				<div class="col-lg-6 col-md-6">
-					<div class="page-banner-image">
+					<div class="page-banner-image" data-sly-test="${model.bannerReference}">
 						<img src="${model.bannerReference}" alt="image">
-						<div class="banner-shape">
+						<div class="banner-shape" data-sly-test="${model.animatedReference}">
                         	<img src="${model.animatedReference}" alt="image">
                     	</div>
 					</div>

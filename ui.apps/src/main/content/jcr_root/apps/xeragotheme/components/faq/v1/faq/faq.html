@@ -1,5 +1,7 @@
 <sly data-sly-use.model="com.theme.xerago.core.models.FaqModel"/>
-<div class="faq-area ptb-100">
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${template.placeholder @ isEmpty=!model.title}"/>
+<div class="faq-area ptb-100" data-sly-test="${model.title}">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6 col-md-12">
@@ -9,6 +11,7 @@
             data-aos-delay="50"
             data-aos-duration="500"
             data-aos-once="true"
+            data-sly-test="${model.imageReference}"
           >
             <img src="${model.imageReference}" />
           </div>
@@ -22,14 +25,14 @@
             data-aos-duration="500"
             data-aos-once="true"
           >
-            <div class="faq-content">
-              <span>${model.subTitle}</span>
+            <div class="faq-content" >
+              <span data-sly-test="${model.subTitle}">${model.subTitle}</span>
               <h3>
                 ${model.title}
               </h3>
             </div>
 
-            <div class="faq-accordion">
+            <div class="faq-accordion" data-sly-test="${model.quesAndAnswers}">
               <div class="accordion" id="FaqAccordion" data-sly-list.quesAndAnswers="${model.quesAndAnswers}">
                 <div class="accordion-item">
                   <button
@@ -39,6 +42,7 @@
                     data-bs-target="#collapse${quesAndAnswersList.index}"
                     aria-expanded="true"
                     aria-controls="collapse${quesAndAnswersList.index}"
+                    data-sly-test="${quesAndAnswers.question}"
                   >
                     ${quesAndAnswers.question}
                   </button>
@@ -46,6 +50,7 @@
                     id="collapse${quesAndAnswersList.index}"
                     class="accordion-collapse collapse"
                     data-bs-parent="#FaqAccordion"
+                    data-sly-test="${quesAndAnswers.answers}"
                   >
                     <div class="accordion-body">
                       <p>

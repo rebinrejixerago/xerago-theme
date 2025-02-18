@@ -1,14 +1,16 @@
 <sly data-sly-use.model="com.theme.xerago.core.models.HeaderModel"/>
-<div class="header-v1 main-header-area">
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${template.placeholder @ isEmpty=!model.logoReference}"/>
+<div class="header-v1 main-header-area" data-sly-test="${model.logoReference}">
 	<div class="top-header topbar-area">
 		<div class="container-fluid">
 			<div class="row align-items-center">
 				<div class="col-lg-6 col-md-6">
 					<ul class="topbar-information">
-					<li>
+					<li data-sly-test="${model.phoneNumber}">
                           <a href="tel:${model.phoneNumber}">${model.phoneNumber}</a>
                       </li>
-                      <li>
+                      <li data-sly-test="${model.email}">
                           <a href="mailto:${model.email}">
                               <span class="__cf_email__">${model.email}</span>
                           </a>
@@ -17,10 +19,10 @@
 				</div>
 				<div class="col-lg-6 col-md-6">
 					<ul class="topbar-action">
-						<li data-sly-repeat.topNav="${model.topNavMulti}">
+						<li data-sly-test="${model.topNavMulti}" data-sly-repeat.topNav="${model.topNavMulti}">
                           <a href="${topNav.topNavUrl}">${topNav.topNavTitle}</a>
                       	</li>
-                      	<li class="dropdown language-option">
+                      	<li class="dropdown language-option" data-sly-test="${model.langMulti}">
                           <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                               <i class="ri-global-line"></i>
                               <span class="lang-name">English</span>
@@ -37,7 +39,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="navbar-area">
+	<div class="navbar-area" data-sly-test="${model.logoReference}">
 		<div class="main-responsive-nav">
 			<div class="container">
 				<div class="main-responsive-menu">
@@ -50,28 +52,28 @@
 			</div>
 		</div>
 	</div>
-	<div class="main-navbar">
+	<div class="main-navbar" data-sly-test="${model.logoReference}">
 		<div class="container-fluid">
 			<nav class="navbar navbar-expand-md navbar-light">
 				<a class="navbar-brand" href="${model.logoUrl}">
 					<img src="${model.logoReference}" class="white-logo" alt="image">
 				</a>
 				
-				<div class="navbar-list">
+				<div class="navbar-list" data-sly-test="${model.typeMulti}">
 					<ul data-sly-list.pageType="${model.typeMulti}">
                     	<li><a href="${pageType.typeUrl}">${pageType.typeTitle}</a></li>
                     </ul>
                 </div>
                 
-                <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent" data-sly-test="${model.mainMenuMulti}">
                 	<ul class="navbar-nav ms-auto" data-sly-list.mainMenu="${model.mainMenuMulti}">
-                		<li class="nav-item">
+                		<li class="nav-item" data-sly-test="${mainMenu.mainMenuTitle}">
                 			<a href="${mainMenu.mainMenuUrl}" class="nav-link active">
                                 ${mainMenu.mainMenuTitle}
                         		<i class="ri-arrow-down-s-line"></i>
                         	</a>
-                        	<ul class="dropdown-menu" data-sly-list.subMenu="${mainMenu.subMenuMulti}">
-                            	<li class="nav-item">
+                        	<ul class="dropdown-menu" data-sly-test="${mainMenu.subMenuMulti}" data-sly-list.subMenu="${mainMenu.subMenuMulti}">
+                            	<li class="nav-item" data-sly-test="${subMenu.subMenuTitle}">
                                 	<a href="${subMenu.subMenuUrl}" class="nav-link active">${subMenu.subMenuTitle}</a>
                                 </li>
                             </ul>
@@ -79,10 +81,10 @@
                 	</ul>
                 	
                 	<div class="others-options d-flex align-items-center">
-                		<div class="option-item">
+                		<div class="option-item" data-sly-test="${model.loginButtonName}">
                               <a href="${model.loginButtonUrl}" class="optional-btn">${model.loginButtonName}</a>
                         </div>
-                          <div class="option-item">
+                          <div class="option-item" data-sly-test="${model.registerButtonName}">
                               <a href="${model.registerButtonUrl}" class="default-btn">${model.registerButtonName}</a>
                           </div>
                 	</div>
@@ -91,7 +93,7 @@
 		</div>
 	</div>
 	
-	<div class="others-option-for-responsive">
+	<div class="others-option-for-responsive" data-sly-test="${model.mainMenuMulti}">
 		<div class="container">
 			<div class="dot-menu">
 				<div class="inner">
@@ -101,13 +103,13 @@
 				</div>
 			</div>
 			
-			<div class="container">
+			<div class="container" data-sly-test="${model.loginButtonName}">
 				<div class="option-inner">
 					<div class="others-options d-flex align-items-center">
-						<div class="option-item">
+						<div class="option-item" data-sly-test="${model.loginButtonName}">
                         	<a href="${model.loginButtonUrl}" class="optional-btn">${model.loginButtonName}</a>
                         </div>
-                        <div class="option-item">
+                        <div class="option-item" data-sly-test="${model.registerButtonName}">
                         	<a href="${model.registerButtonUrl}" class="default-btn">${model.registerButtonName}</a>
                         </div>
 					</div>

@@ -1,12 +1,14 @@
 <sly data-sly-use.model="com.theme.xerago.core.models.OurReviewModel"/>
-<div class="review-area bg-F4F5F5 ptb-100">
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${template.placeholder @ isEmpty=!model.title}"/>
+<div class="review-area bg-F4F5F5 ptb-100" data-sly-test="${model.title}">
     <div class="container">
         <div class="section-title">
-            <span>${model.subTitle}</span>
+            <span data-sly-test="${model.subTitle}">${model.subTitle}</span>
             <h2>${model.title}</h2>
         </div>
 
-        <div class="review-slides-two owl-carousel owl-theme" data-sly-list.reviewSection="${model.reviewSection}">
+        <div class="review-slides-two owl-carousel owl-theme" data-sly-test="${model.reviewSection}" data-sly-list.reviewSection="${model.reviewSection}">
             <div class="single-review-card" data-aos="fade-up" data-aos-delay="50" data-aos-duration="500" data-aos-once="true">
                 <ul class="review-rating">
                     <li><i class="ri-star-line"></i></li>
@@ -15,19 +17,19 @@
                     <li><i class="ri-star-line"></i></li>
                     <li><i class="ri-star-line"></i></li>
                 </ul>
-                <p>${reviewSection.review @ context="html"}</p>
-                <div class="review-info">
+                <p data-sly-test="${reviewSection.review}">${reviewSection.review @ context="html"}</p>
+                <div class="review-info" data-sly-test="${reviewSection.reviewerReference}">
                     <img src="${reviewSection.reviewerReference}" alt="image">
-                    <h3>${reviewSection.reviewerName}</h3>
-                    <span>${reviewSection.reviewerDesignation}</span>
+                    <h3 data-sly-test="${reviewSection.reviewerName}">${reviewSection.reviewerName}</h3>
+                    <span data-sly-test="${reviewSection.reviewerDesignation}"> ${reviewSection.reviewerDesignation}</span>
                 </div>
-                <div class="reviewquote-image">
+                <div class="reviewquote-image" data-sly-test="${model.quoteReference}">
                     <img src="${model.quoteReference}" alt="image">
                 </div>
             </div>
         </div>
 
-        <div class="review-optional-content">
+        <div class="review-optional-content" data-sly-test="${model.optionalContent}">
             <p>${model.optionalContent @ context="html"}</p>
         </div>
     </div>

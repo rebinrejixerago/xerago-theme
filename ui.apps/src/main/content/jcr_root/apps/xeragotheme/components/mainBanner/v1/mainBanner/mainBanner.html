@@ -1,19 +1,21 @@
 <sly data-sly-use.model="com.theme.xerago.core.models.MainBannerModel"/>
-<div class="main-banner-area">
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${template.placeholder @ isEmpty=!model.title}"/>
+<div class="main-banner-area" data-sly-test="${model.title}">
     <div class="container-fluid">
         <div class="row align-items-center">
             <div class="col-lg-4 col-md-12" data-aos="fade-right" data-aos-delay="50" data-aos-duration="500" data-aos-once="true">
                 <div class="main-banner-content">
-                    <span>${model.subTitle}</span>
+                    <span data-sly-test="${model.subTitle}">${model.subTitle}</span>
                     <h1>${model.title}</h1>
-                    <p>${model.description @ context="html"}</p>
+                    <p data-sly-test="${model.description}">${model.description @ context="html"}</p>
 
-                    <div class="banner-btn">
+                    <div class="banner-btn" data-sly-test="${model.bannerButtonName}">
                         <a href="${model.bannerButtonUrl}" class="default-btn">${model.bannerButtonName}</a>
                     </div>
 
-                    <ul class="trust-content" data-sly-list.trustContent="${model.trustContent}">
-                        <li>
+                    <ul class="trust-content" data-sly-test="${model.trustContent}" data-sly-list.trustContent="${model.trustContent}">
+                        <li data-sly-test="${trustContent.imageDes}">
                             <img src="${trustContent.trustReference}" alt="image">
                             <span>${trustContent.imageDes}</span>
                         </li>
@@ -21,7 +23,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-12">
+            <div class="col-lg-4 col-md-12" data-sly-test="${model.bannerReference}">
                 <div class="main-banner-image" data-speed="0.05" data-revert="true">
                     <img src="${model.bannerReference}" alt="image" data-aos="fade-down" data-aos-delay="50" data-aos-duration="500" data-aos-once="true">
                 </div>

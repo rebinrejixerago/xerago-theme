@@ -1,19 +1,21 @@
 <sly data-sly-use.model="com.theme.xerago.core.models.PricingPlanModel"/>
-<div class="pricing-area pt-100 pb-75">
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${template.placeholder @ isEmpty=!model.title}"/>
+<div class="pricing-area pt-100 pb-75" data-sly-test="${model.title}">
     <div class="container">
         <div class="section-title">
             <span>${model.subtitle}</span>
             <h2>${model.title}</h2>
         </div>
 
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" data-sly-test="${model.boxfeatures}">
             <div class="col-lg-4 col-md-6" data-sly-repeat.boxfeatures="${model.boxfeatures}">
                 <div class="single-pricing-table" data-aos="fade-up" data-aos-delay="50" data-aos-duration="500" data-aos-once="true">
-                    <div class="pricing-header">
+                    <div class="pricing-header" data-sly-test="${boxfeatures.boxtitle}">
                         <h3>${boxfeatures.boxtitle}</h3>
                     </div>
-                    <div class="price">${boxfeatures.planfee}<span>${boxfeatures.planperiod}</span></div>
-                    <div class="pricing-btn">
+                    <div class="price" data-sly-test="${boxfeatures.planfee}">${boxfeatures.planfee}<span>${boxfeatures.planperiod}</span></div>
+                    <div class="pricing-btn" data-sly-test="${boxfeatures.buttonText}">
                         <a href="${boxfeatures.linkPath}" class="default-btn">${boxfeatures.buttonText}</a>
                     </div>
 					<div>
