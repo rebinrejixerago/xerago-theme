@@ -8,7 +8,7 @@
 				<div class="col-lg-6 col-md-6">
 					<ul class="topbar-information">
 					<li data-sly-test="${model.phoneNumber}">
-                          <a href="tel:${model.phoneNumber}">${model.phoneNumber}</a>
+                          <a href="#" id="phoneLink" data-phone="${model.phoneNumber}">${model.phoneNumber}</a>
                       </li>
                       <li data-sly-test="${model.email}">
                           <a href="mailto:${model.email}">
@@ -70,7 +70,7 @@
                 		<li class="nav-item" data-sly-test="${mainMenu.mainMenuTitle}">
                 			<a href="${mainMenu.mainMenuUrl}" class="nav-link active">
                                 ${mainMenu.mainMenuTitle}
-                        		<i class="ri-arrow-down-s-line"></i>
+                        		<i class="ri-arrow-down-s-line" data-sly-test="${mainMenu.subMenuMulti}"></i>
                         	</a>
                         	<ul class="dropdown-menu" data-sly-test="${mainMenu.subMenuMulti}" data-sly-list.subMenu="${mainMenu.subMenuMulti}">
                             	<li class="nav-item" data-sly-test="${subMenu.subMenuTitle}">

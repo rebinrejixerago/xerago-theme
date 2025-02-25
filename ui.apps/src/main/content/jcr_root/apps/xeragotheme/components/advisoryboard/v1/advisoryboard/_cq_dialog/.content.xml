@@ -5,7 +5,7 @@
     xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:unstructured"
     sling:resourceType="cq/gui/components/authoring/dialog"
-    jcr:title="About Us Properties">
+    jcr:title="Advisory Board Properties">
 	<content
         jcr:primaryType="nt:unstructured"
         sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
@@ -53,33 +53,36 @@
                         			sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                         			fieldLabel="Member Designation"
                         			name="./memberDesig" />
-                        		<socialMediaProfiles
-                					jcr:primaryType="nt:unstructured"
-                					fieldLabel="Social Media Profiles"
-                					sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
-                					composite="{Boolean}true">              
-                					<field
-         								jcr:primaryType="nt:unstructured"
-                    					sling:resourceType="granite/ui/components/coral/foundation/container"
-                    					name="./socialMediaProfiles">
-                						<items jcr:primaryType="nt:unstructured">
-                							<socialMediaIcon
-                        						jcr:primaryType="nt:unstructured"
-                        						sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
-                        						enableNextGenDynamicMedia="{Boolean}true"
-                        						fieldLabel="Social Media Icon"
-                        						fileNameParameter="./socialfileName"
-                        						fileReferenceParameter="./socialReference"
-                        						mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
-                   								name="./socialMediaIcon"/>
-                    						<socialMediaUrl
-                        						jcr:primaryType="nt:unstructured"
-                       							sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                    							fieldLabel="Social Media Url"
-                       							name="./socialMediaUrl" />
-                						</items>
-                					</field>
-            					</socialMediaProfiles>
+                        		<socialMediaProfiles jcr:primaryType="nt:unstructured"
+								    sling:resourceType="granite/ui/components/coral/foundation/well"
+								    jcr:title="Social Media Profiles">
+								    <items jcr:primaryType="nt:unstructured">
+								    	<facebookUrl jcr:primaryType="nt:unstructured"
+									     	sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+										    fieldLabel="Facebook"
+										    fieldDescription="Facebook Url"
+										    rootPath="/content"
+										    name="./facebookUrl"/>
+										<twitterUrl jcr:primaryType="nt:unstructured"
+									     	sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+										    fieldLabel="Twitter"
+										    fieldDescription="Twitter Url"
+										    rootPath="/content"
+										    name="./twitterUrl"/>
+										<instagramUrl jcr:primaryType="nt:unstructured"
+									     	sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+										    fieldLabel="Instagram"
+										    fieldDescription="Instagram Url"
+										    rootPath="/content"
+										    name="./instagramUrl"/>
+										<linkedUrl jcr:primaryType="nt:unstructured"
+									     	sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+										    fieldLabel="LinkedIn"
+										    fieldDescription="LinkedIn Url"
+										    rootPath="/content"
+										    name="./linkedUrl"/>
+								    </items>
+								</socialMediaProfiles>
                 			</items>
                 		</field>
             		</advisoryMembers>

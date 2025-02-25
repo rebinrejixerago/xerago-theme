@@ -14,10 +14,25 @@
                     <h4>${model.authorName}</h4>
                     <span>${model.authorRole}</span>
                 </div>
-                <ul class="info-social" data-sly-test="${model.socialMediaProfiles}" data-sly-list.socialProfiles="${model.socialMediaProfiles}">
-                    <li data-sly-test="${socialProfiles.socialMediaUrl}">
-                        <a href="${socialProfiles.socialMediaUrl}" target="_blank">
-                            <img src="${socialProfiles.socialReference}" alt="Social Media Icon">
+                <ul class="info-social">
+                    <li data-sly-test="${model.facebookUrl}">
+                        <a href="${model.facebookUrl}" target="_blank">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                    </li>
+                    <li data-sly-test="${model.twitterUrl}">
+                        <a href="${model.twitterUrl}" target="_blank">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                    </li>
+                    <li data-sly-test="${model.instagramUrl}">
+                        <a href="${model.instagramUrl}" target="_blank">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                    </li>
+                    <li data-sly-test="${model.linkedUrl}">
+                        <a href="${model.linkedUrl}" target="_blank">
+                            <i class="ri-linkedin-line"></i>
                         </a>
                     </li>
                 </ul>

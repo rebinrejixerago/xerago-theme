@@ -1,5 +1,7 @@
 package com.theme.xerago.core.models;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.sling.api.resource.Resource;
@@ -25,8 +27,8 @@ public class PricingMultiModel {
 	private String linkPath;
 			
 	@Inject
-	private String description;
-	
+	private List<PricingPlanFeatureList> featureList;
+
 	@Inject
 	private String enableFeature;
 
@@ -52,8 +54,8 @@ public class PricingMultiModel {
 		return linkPath;
 	}
 
-	public String getDescription() {
-		return description;
+	public List<PricingPlanFeatureList> getFeatureList() {
+		return featureList;
 	}
 
 	public String getEnableFeature() {

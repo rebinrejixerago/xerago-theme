@@ -9,6 +9,19 @@
 		                    <span data-sly-test="${model.subtitle}">${model.subtitle}</span>
 		                    <h3>${model.title}</h3>
 		                    <p data-sly-test="${model.description}" class="rich-text">${model.description @ context='html'}</p>
+		                	<div class="row justify-content-center">
+		                        <div class="col-lg-6 col-md-6">
+		                            <ul class="paiement-list" data-sly-list.features="${model.featuresList @ begin=0, step=2}">
+		                                <li><i class="ri-check-line"></i> ${features.feature}</li>
+		                            </ul>
+		                        </div>
+
+		                        <div class="col-lg-6 col-md-6">
+		                            <ul class="paiement-list" data-sly-list.features="${model.featuresList @ begin=1, step=2}">
+		                                <li><i class="ri-check-line"></i> ${features.feature}</li>
+		                            </ul>
+		                        </div>
+		                    </div>
 		                </div>
 		            </div>
 

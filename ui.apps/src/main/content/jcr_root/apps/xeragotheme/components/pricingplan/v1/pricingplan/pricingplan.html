@@ -18,11 +18,9 @@
                     <div class="pricing-btn" data-sly-test="${boxfeatures.buttonText}">
                         <a href="${boxfeatures.linkPath}" class="default-btn">${boxfeatures.buttonText}</a>
                     </div>
-					<div>
-						
-						<p data-sly-test="${boxfeatures.description}" class="rich-text">${boxfeatures.description @ context='html'}</p>
-						
-					</div>
+					<ul class="features-list" data-sly-test="${boxfeatures.featureList}" data-sly-list.featureList="${boxfeatures.featureList}">
+                        <li data-sly-test="${featureList.feature}"><i class="ri-check-line"></i> ${featureList.feature}</li>
+                    </ul>
 					<div class="best-sale" sly data-sly-test="${boxfeatures.enableFeature}">Best Sale</div>
                     
                 </div>

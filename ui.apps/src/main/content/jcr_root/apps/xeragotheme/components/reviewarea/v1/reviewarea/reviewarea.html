@@ -1,0 +1,44 @@
+	<sly data-sly-use.model="com.theme.xerago.core.models.ReviewAreaModel"/>
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-call="${template.placeholder @ isEmpty=!model.title}"/>
+<div class="review-area ptb-100" data-sly-test="${model.title}">
+    <div class="container">
+      <div class="section-title">
+        <span data-sly-test="${model.subtitle}">${model.subtitle}</span>
+        <h2>${model.title}</h2>
+      </div>
+
+      <div class="review-slides owl-carousel owl-theme" data-sly-test="${model.review}" data-sly-list.review="${model.review}">
+        <div
+          class="single-review-box"
+          data-aos="fade-up"
+          data-aos-delay="50"
+          data-aos-duration="500"
+          data-aos-once="false"
+        >
+        <ul class="review-rating">
+            <li><i class="ri-star-line"></i></li>
+            <li><i class="ri-star-line"></i></li>
+            <li><i class="ri-star-line"></i></li>
+            <li><i class="ri-star-line"></i></li>
+            <li><i class="ri-star-line"></i></li>
+          </ul>
+          <p data-sly-test="${review.description}" class="rich-text">${review.description @ context='html'}</p>
+          <div class="reviewquote-image" data-sly-test="${review.Icon}">
+            <img src="${review.Icon}" alt="image" />
+          </div>
+          <div class="review-info" data-sly-test="${review.reviewername}">
+            <h3>${review.reviewername}</h3>
+            <span>${review.designation}</span>
+          </div>
+        </div>
+   
+      </div>
+
+      <div class="review-optional-content" data-sly-test="${model.content}">
+        <p>
+          ${model.content @ context='html'}
+        </p>
+      </div>
+    </div>
+  </div>

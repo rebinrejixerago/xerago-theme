@@ -27,8 +27,17 @@ public class BlogDetailsModel {
 	@ValueMapValue
 	private String authorRole;
 	
-	@Inject 
-	private List<AdvisoryBoardSocial> socialMediaProfiles;
+	@ValueMapValue
+	private String facebookUrl;
+	
+	@ValueMapValue
+	private String twitterUrl;
+	
+	@ValueMapValue
+	private String instagramUrl;
+	
+	@ValueMapValue
+	private String linkedUrl;
 
 	public String getTitle() {
 		return title;
@@ -49,8 +58,21 @@ public class BlogDetailsModel {
 	public String getAuthorRole() {
 		return authorRole;
 	}
+	
 
-	public List<AdvisoryBoardSocial> getSocialMediaProfiles() {
-		return socialMediaProfiles;
+	public String getFacebookUrl() {
+		return facebookUrl;
+	}
+
+	public String getTwitterUrl() {
+		return twitterUrl;
+	}
+
+	public String getInstagramUrl() {
+		return instagramUrl;
+	}
+
+	public String getLinkedUrl() {
+		return linkedUrl;
 	}
 }

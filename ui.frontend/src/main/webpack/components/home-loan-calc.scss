@@ -1,0 +1,104 @@
+.home-loan-main{
+	max-width: 1440px !important;
+    margin: auto !important;
+    padding: 0 20px;
+}
+.mainCalc{
+    max-width: 1440px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.leftCol{
+	background-color: var(--main-color);
+    padding-top: 5px;
+    padding-bottom: 20px;
+    flex-grow: 1;
+}
+.requiredFields{
+	font-size: 16px;
+}
+.calc p{
+    color: #fff;
+    padding: 40px 40px 10px;
+    font-size: 18px;
+}
+.calc .headerSecOne{
+	line-height: 27px;
+}
+.calc h2{
+	color: #fff;
+    font-weight: 700;
+    padding: 10px 40px 0;
+    font-size: 21px;
+}
+.calc .row{
+    display: flex;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+}
+.calc label {
+    color: #fff !important;
+    text-decoration: none !important;
+}
+.input-container{
+	width: 100%;
+    margin: 3px 0 5px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    display: flex;
+    -moz-flex-direction: row;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: flex-start;
+    border-radius: 8px;
+    background: #eee;
+    border: 1px solid transparent;
+    border: .9px solid transparent;
+}
+.input-container .add-on-pre{
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+    box-sizing: border-box;
+}
+.input-container .input-group-addon.before{
+	width: 48px !important;
+    height: 48px !important;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border: none !important;
+    background: #eee !important;
+}
+.input-group-addon {
+	font-size: 1rem;
+    color: #666;
+    padding: 6px 20px;
+    font-weight: 400;
+    line-height: 1;
+    text-align: center;
+}
+.input-switch-wrapper .input-switch-wrapper{
+	margin: 0;
+}
+.input-container .input-switch-wrapper input{
+	width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    letter-spacing: .5px;
+    height: 48px;
+    padding: 10px 20px;
+    background: #eee;
+    border: none !important;
+    box-shadow: none;
+    border-radius: 8px;
+    padding-left: 0 !important;
+
+}
+.input-container .input-switch-wrapper input{
+	outline: none;
+}
+
+ 

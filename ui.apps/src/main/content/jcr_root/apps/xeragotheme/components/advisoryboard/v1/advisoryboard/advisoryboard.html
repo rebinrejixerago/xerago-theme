@@ -13,15 +13,30 @@
 					<div class="single-team-card">
 						<div class="team-image" data-sly-test="${advisoryMembers.memberReference}">
 							<img src="${advisoryMembers.memberReference}" alt="Oleev">
-							<ul class="social" data-sly-test="${advisoryMembers.socialMediaProfiles}">
-								<li data-sly-repeat.socialMediaProfiles="${advisoryMembers.socialMediaProfiles}">
-									<a href="${socialMediaProfiles.socialMediaProfiles}" target="_blank">
+							<ul class="social" >
+								<li data-sly-test="${advisoryMembers.facebookUrl}">
+									<a href="${advisoryMembers.facebookUrl}" target="_blank">
                                     	<i class="ri-facebook-fill"></i>
                                 	</a>
 								</li>
+								<li data-sly-test="${advisoryMembers.twitterUrl}">
+	                                <a href="${advisoryMembers.twitterUrl}" target="_blank">
+	                                    <i class="ri-twitter-fill"></i>
+	                                </a>
+	                            </li>
+	                            <li data-sly-test="${advisoryMembers.instagramUrl}">
+	                                <a href="${advisoryMembers.instagramUrl}" target="_blank">
+	                                    <i class="ri-instagram-line"></i>
+	                                </a>
+	                            </li>
+	                            <li data-sly-test="${advisoryMembers.linkedUrl}">
+	                                <a href="${advisoryMembers.linkedUrl}" target="_blank">
+	                                    <i class="ri-linkedin-line"></i>
+	                                </a>
+	                            </li>
 							</ul>
 						</div>
-						<div class="team-content" data-sly-test="${advisoryMembers.memberName}">>
+						<div class="team-content" data-sly-test="${advisoryMembers.memberName}">
 							<h3>${advisoryMembers.memberName}</h3>
                         	<span>${advisoryMembers.memberDesig}</span>
 						</div>
